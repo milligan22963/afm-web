@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# This is to just provide a command to allow shelling into the snap
+# to be able to see it from the snap view while running to verify
+# connections and the like
+echo "Web shell"

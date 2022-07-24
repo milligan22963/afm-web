@@ -1,0 +1,44 @@
+name: afm-web
+base: core20
+version: '0.1'
+summary: Basic web site for use with afm-camp by AFM Software
+description: |
+  A simple web site to illustrate using afm-camp.
+
+architectures:
+  - build-on: amd64
+  - build-on: i386
+  - build-on: arm64
+  - build-on: armhf
+
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: devmode # use 'strict' once you have the right plugs and slots
+contact: dwm@afmsoftware.com
+
+apps:
+  shell:
+    command: bin/shell
+
+# This slot will provide the "html" directory for afm-camp to display
+slots:
+  web:
+    interface: content
+    content: readable
+    source:
+      read:
+        - $SNAP/html
+plugs:
+  database:
+    interface: content
+    content: readable
+    target: $SNAP/database
+
+parts:
+  web:
+    plugin: dump
+    source: src
+    stage-packages:
+      - curl
+    stage:
+      - bin/shell
+      - html/

@@ -1,0 +1,41 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+
+  build:
+    cmds:
+      - snapcraft --use-lxd
+
+  debug:
+    cmds:
+      - snapcraft --use-lxd --debug
+  
+  debug-shell:
+    cmds:
+      - snap run --shell afm-web.shell
+
+  clean:
+    cmds:
+      - snapcraft clean --use-lxd
+
+  install:
+    cmds:
+      - snap install afm-web_0.1* --devmode
+
+  connect:
+    cmds:
+    - snap connect afm-camp:web afm-web:web
+    - snap connect afm-web:database afm-camp:database
+    
+  remove:
+    cmds:
+      - snap remove afm-web
