@@ -39,3 +39,19 @@ tasks:
   remove:
     cmds:
       - snap remove afm-web
+
+  upload-edge:
+    cmds:
+      - snapcraft upload --release=edge afm-web_0.1*.snap
+
+  upload-beta:
+    cmds:
+      - snapcraft upload --release=beta afm-web_0.1*.snap
+
+  upload-candidate:
+    cmds:
+      - snapcraft upload --release=candidate afm-web_0.1*.snap
+
+  upload-stable:
+    cmds:
+      - snapcraft upload --release=stable afm-web_0.1*.snap
