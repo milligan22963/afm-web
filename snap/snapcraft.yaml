@@ -12,7 +12,7 @@ architectures:
   - build-on: armhf
 
 grade: devel # must be 'stable' to release into candidate/stable channels
-confinement: devmode # use 'strict' once you have the right plugs and slots
+confinement: strict
 contact: dwm@afmsoftware.com
 
 apps:
