@@ -1,3 +1,5 @@
 #!/bin/bash
 
 # Items that need database access can be performed now
+# In this example, we will create our database if it
+# doesn't exist and populate a table

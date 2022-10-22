@@ -1,6 +1,6 @@
 name: afm-web
 base: core20
-version: '0.1'
+version: '0.2'
 summary: Basic web site for use with afm-camp by AFM Software
 description: |
   A simple web site to illustrate using afm-camp.
